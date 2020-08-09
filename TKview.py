@@ -10,8 +10,12 @@ def WinSize700():
     window.geometry('700x400')
 
 def netw():
-    return os.system('ping ya.ru')
+    return os.system('ping -c 4 ya.ru')
 
+def joja():
+    return 'jejejejejeje'
+def non1():
+    file_content.insert('end', f"\n{joja()}")
 
 window.title('Alt_MTR')
 
@@ -20,11 +24,12 @@ frame_file_content = LabelFrame(text='Test_text')
 
 file_name = Entry(frame, width='25')
 
-button_ping = Button(frame, text='Ping')
+button_ping = Button(frame, text='Ping', command=non1)
 button_tracert = Button(frame, text='Tracert')
 
 file_content = Text(frame_file_content, bg='#FFFFE0', width='50', height='20', wrap=NONE)
 
+#Разметка
 Yscroll = Scrollbar(frame_file_content, command=file_content.yview)
 Xscroll = Scrollbar(orient=HORIZONTAL, command=file_content.xview)
 
