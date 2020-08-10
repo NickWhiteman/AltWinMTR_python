@@ -14,9 +14,13 @@ def netw():
 
 def joja():
     return 'jejejejejeje'
+    
 def non1():
-    file_content.insert('end', f"\n{joja()}")
+    file_content.insert('end', f"\n {netw()}")
 
+def ClearClicked():
+    file_content.delete(1.0, END)
+        
 window.title('Alt_MTR')
 
 frame = Frame()
@@ -26,6 +30,7 @@ file_name = Entry(frame, width='25')
 
 button_ping = Button(frame, text='Ping', command=non1)
 button_tracert = Button(frame, text='Tracert')
+button_clear = Button(frame, text = 'Clear', command=ClearClicked)
 
 file_content = Text(frame_file_content, bg='#FFFFE0', width='50', height='20', wrap=NONE)
 
@@ -39,6 +44,7 @@ frame.pack()
 file_name.pack(side=LEFT)
 button_ping.pack(side=LEFT)
 button_tracert.pack(side=LEFT)
+button_clear.pack(side=LEFT)
 frame_file_content.pack(fill=BOTH, expand=1)
 file_content.pack(side=LEFT, fill=BOTH, expand=1)
 Yscroll.pack(side=LEFT, fill=Y)
